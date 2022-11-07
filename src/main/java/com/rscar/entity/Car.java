@@ -70,6 +70,7 @@ public class Car extends Entity {
     @Override
     public String toString() {
         return "Car{" +
+                "id=" + getId() + '\'' +
                 "name='" + name + '\'' +
                 ", make='" + make + '\'' +
                 ", type='" + type + '\'' +
