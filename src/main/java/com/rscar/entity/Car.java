@@ -8,7 +8,7 @@ public class Car extends Entity {
     private String type;
     private Date graduationYear;
     private String vinCode;
-    private int technacalCondidtion;
+    private int technicalCondition;
     private double price;
 
     public String getName() {
@@ -51,12 +51,12 @@ public class Car extends Entity {
         this.vinCode = vinCode;
     }
 
-    public int getTechnacalCondidtion() {
-        return technacalCondidtion;
+    public int getTechnicalCondition() {
+        return technicalCondition;
     }
 
-    public void setTechnacalCondidtion(int technacalCondidtion) {
-        this.technacalCondidtion = technacalCondidtion;
+    public void setTechnicalCondition(int technicalCondition) {
+        this.technicalCondition = technicalCondition;
     }
 
     public double getPrice() {
@@ -76,7 +76,7 @@ public class Car extends Entity {
                 ", type='" + type + '\'' +
                 ", graduationYear=" + graduationYear +
                 ", vinCode='" + vinCode + '\'' +
-                ", technacalCondidtion=" + technacalCondidtion +
+                ", technicalCondition=" + technicalCondition +
                 ", price=" + price +
                 '}';
     }

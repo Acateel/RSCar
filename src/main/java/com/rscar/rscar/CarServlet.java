@@ -8,7 +8,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "CarServlet", value = "/CarServlet")
+@WebServlet(name = "CarServlet", value = "/Cars")
 public class CarServlet extends HttpServlet {
     protected transient CarDao carDao;
 
@@ -19,11 +19,9 @@ public class CarServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try{
-            request.setAttribute("cars", carDao.findAllByingCar());
+
+            //request.setAttribute("cars", carDao.findAllByingCar());
             request.getRequestDispatcher("/WEB-INF/show_cars.jsp").forward(request, response);
-        } catch (DaoException e) {
-            //log
-        }
+
     }
 }

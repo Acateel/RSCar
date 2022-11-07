@@ -101,7 +101,7 @@ public class CarDao extends BaseDao<Car>{
             car.setType(resultSet.getString(4));
             car.setGraduationYear(resultSet.getDate(5));
             car.setVinCode(resultSet.getString(6));
-            car.setTechnacalCondidtion(resultSet.getInt(7));
+            car.setTechnicalCondition(resultSet.getInt(7));
             car.setPrice(resultSet.getDouble(8));
         } catch (SQLException throwable) {
             // log
