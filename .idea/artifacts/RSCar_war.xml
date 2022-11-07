@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RSCar:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>RSCar</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="RSCar-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="RSCar:war exploded" />
+    </root>
+  </artifact>
+</component>
