@@ -27,7 +27,7 @@ public class CarDao extends BaseDao<Car>{
     }
 
     @Override
-    List<Car> findAll() throws DaoException {
+    public List<Car> findAll() throws DaoException {
         List<Car> cars = new ArrayList<>();
         Connection connection = null;
         Statement statement = null;
@@ -47,7 +47,7 @@ public class CarDao extends BaseDao<Car>{
         return cars;
     }
 
-    List<Car> findAllByingCar() throws DaoException {
+    public List<Car> findAllByingCar() throws DaoException {
         List<Car> cars = new ArrayList<>();
         Connection connection = null;
         Statement statement = null;
@@ -68,27 +68,27 @@ public class CarDao extends BaseDao<Car>{
     }
 
     @Override
-    Car findEntityById(int id) throws DaoException {
+    public Car findEntityById(int id) throws DaoException {
         return null;
     }
 
     @Override
-    boolean delete(Car entity) throws DaoException {
+    public boolean delete(Car entity) throws DaoException {
         return false;
     }
 
     @Override
-    boolean delete(int id) throws DaoException {
+    public boolean delete(int id) throws DaoException {
         return false;
     }
 
     @Override
-    boolean create(Car entity) throws DaoException {
+    public boolean create(Car entity) throws DaoException {
         return false;
     }
 
     @Override
-    boolean update(Car entity) throws DaoException {
+    public boolean update(Car entity) throws DaoException {
         return false;
     }
 

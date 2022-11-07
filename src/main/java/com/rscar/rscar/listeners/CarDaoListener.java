@@ -9,20 +9,20 @@ import jakarta.servlet.annotation.*;
 @WebListener
 public class CarDaoListener implements ServletContextListener, HttpSessionListener, HttpSessionAttributeListener {
 
-    CarDao facultyDao;
+    CarDao carDao;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         /* This method is called when the servlet context is initialized(when the Web application is deployed). */
         BasicConnectionPool pool = (BasicConnectionPool) sce.getServletContext().getAttribute("connectionPool");
-        facultyDao = new CarDao(pool);
+        carDao = new CarDao(pool);
         ServletContext context = sce.getServletContext();
-        context.setAttribute("FacultyDao", facultyDao);
+        context.setAttribute("CarDao", carDao);
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         /* This method is called when the servlet Context is undeployed or Application Server shuts down. */
-        facultyDao = null;
+        carDao = null;
     }
 }
