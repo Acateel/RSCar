@@ -35,4 +35,9 @@ public class CarDao extends BaseDao<Car>{
     boolean create(Car entity) throws DaoException {
         return false;
     }
+
+    @Override
+    boolean update(Car entity) throws DaoException {
+        return false;
+    }
 }

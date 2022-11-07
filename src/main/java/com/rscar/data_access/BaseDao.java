@@ -20,6 +20,7 @@ public abstract class BaseDao<T extends Entity> {
     abstract boolean delete(T entity) throws DaoException;
     abstract boolean delete(int id) throws DaoException;
     abstract boolean create(T entity) throws DaoException;
+    abstract boolean update(T entity) throws DaoException;
 
     public void close(Statement statement){
         try {
