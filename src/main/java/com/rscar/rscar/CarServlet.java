@@ -19,9 +19,11 @@ public class CarServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-            //request.setAttribute("cars", carDao.findAllByingCar());
+        try{
+            request.setAttribute("cars", carDao.findAllByingCar());
             request.getRequestDispatcher("/WEB-INF/show_cars.jsp").forward(request, response);
-
+        } catch (DaoException e) {
+            //log
+        }
     }
 }

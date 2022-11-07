@@ -16,11 +16,7 @@ public class CarDao extends BaseDao<Car>{
             "select * from car";
 
     private static final String SQL_SELECT_CAR_FOR_BYING =
-                    "select car.*  " +
-                    "from car " +
-                    "left join regcar on regcar.CarId=car.id " +
-                    "left join sales on sales.CarId=car.id" +
-                    "where regcar.id is null  and sales.id is null;";
+                    "select car.* from car left join regcar on regcar.CarId=car.id left join sales on sales.CarId=car.id where regcar.id is null  and sales.id is null";
 
     public CarDao(BasicConnectionPool connectionPool) {
         super(connectionPool);
