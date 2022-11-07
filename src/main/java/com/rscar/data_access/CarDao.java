@@ -12,20 +12,15 @@ import java.util.List;
 
 public class CarDao extends BaseDao<Car>{
 
-    public static void main(String[] args) throws SQLException, DaoException {
-        CarDao dao = new CarDao(BasicConnectionPool.create(
-                "jdbc:mysql://localhost:3306/CarRentSell",
-                "root",
-                "pass"
-        ));
-
-        List<Car> list = dao.findAll();
-
-        System.out.println(list);
-    }
-
     private static final String SQL_SELECT_ALL =
             "select * from car";
+
+    private static final String SQL_SELECT_CAR_FOR_BYING =
+                    "select car.*  " +
+                    "from car " +
+                    "left join regcar on regcar.CarId=car.id " +
+                    "left join sales on sales.CarId=car.id" +
+                    "where regcar.id is null  and sales.id is null;";
 
     public CarDao(BasicConnectionPool connectionPool) {
         super(connectionPool);
@@ -33,7 +28,7 @@ public class CarDao extends BaseDao<Car>{
 
     @Override
     List<Car> findAll() throws DaoException {
-        List<Car> faculties = new ArrayList<>();
+        List<Car> cars = new ArrayList<>();
         Connection connection = null;
         Statement statement = null;
         try {
@@ -41,7 +36,7 @@ public class CarDao extends BaseDao<Car>{
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL);
             while (resultSet.next()) {
-                faculties.add(parseResultSet(resultSet));
+                cars.add(parseResultSet(resultSet));
             }
         } catch (SQLException throwable) {
             throw new DaoException(throwable.getMessage());
@@ -49,7 +44,27 @@ public class CarDao extends BaseDao<Car>{
             close(statement);
             close(connection);
         }
-        return faculties;
+        return cars;
+    }
+
+    List<Car> findAllByingCar() throws DaoException {
+        List<Car> cars = new ArrayList<>();
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = connectionPool.getConnection();
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_CAR_FOR_BYING);
+            while (resultSet.next()) {
+                cars.add(parseResultSet(resultSet));
+            }
+        } catch (SQLException throwable) {
+            throw new DaoException(throwable.getMessage());
+        } finally {
+            close(statement);
+            close(connection);
+        }
+        return cars;
     }
 
     @Override
