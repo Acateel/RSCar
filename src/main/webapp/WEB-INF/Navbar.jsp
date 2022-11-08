@@ -8,7 +8,10 @@
         <div>
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="Cars">Cars </a>
+                    <a href="Cars">Buy</a>
+                </li>
+                <li>
+                    <a href="Cars">Rent</a>
                 </li>
             </ul>
         </div>
@@ -16,11 +19,11 @@
         <div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a href="">
+                    <a href="Login">
                         Login
                     </a>
                 </li>
-                <li class="active">
+                <li class="Registration">
                     <a href="">
                         Register
                     </a>

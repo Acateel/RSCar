@@ -38,5 +38,3 @@ Z
 *src/main/webapp/WEB-INF/bootstrapHead.html,f\7\f7aa141c10c18917e3128345282485db2735d696
 W
 'src/main/java/com/rscar/entity/Car.java,0\3\036598a86de6a82d527d62de35b5f3dd4c650fe7
-R
-"src/main/webapp/WEB-INF/Navbar.jsp,5\0\509929de80aafc53d428fb9153fd52ffaefc284d
