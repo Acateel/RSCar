@@ -22,14 +22,10 @@ V
 &.idea/artifacts/RSCar_war_exploded.xml,3\6\3657477d7be639d11784d53eaea2de21730714db
 Y
 )src/main/java/com/rscar/entity/Sales.java,2\c\2cd7aff16a8c68a9c7547e991421605154606bf6
-X
-(src/main/java/com/rscar/entity/User.java,2\2\223412271f60957117010d6983b096bf82abb757
 \
 ,src/main/java/com/rscar/entity/Customer.java,0\a\0ab2038100841c8929e04a4ff1a88353f2af6544
 w
 Gsrc/main/java/com/rscar/data_access/connection_pool/ConnectionPool.java,3\8\38ef62d4fa2e4db6e02f2bd65cfcde337d2103e7
-`
-0src/main/java/com/rscar/data_access/BaseDao.java,c\6\c610f16f46c288d4e0b248534cdf54da15cf9bdc
 k
 ;src/main/java/com/rscar/rscar/listeners/CarDaoListener.java,6\e\6e2f1717a505a4c279279a9715a0f161d9552343
 8
