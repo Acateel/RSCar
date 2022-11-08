@@ -17,7 +17,7 @@
 <body>
 <jsp:include page="Navbar.jsp"/>
 <div class="container">
-    <h1>All cars</h1>
+    <h1>All cars for rent</h1>
     <form action="Cars" method="post">
         <label for="order">
             Order
@@ -42,7 +42,8 @@
             <th scope="col">Graduation Year</th>
             <th scope="col">Vin code</th>
             <th scope="col">Technical Condition</th>
-            <th scope="col">Price</th>
+            <th scope="col">Price for one day</th>
+            <th scope="col">Rent</th>
         </tr>
         </thead>
         <tbody>
@@ -56,6 +57,7 @@
                 <td><c:out value="${car.vinCode}"/></td>
                 <td><c:out value="${car.technicalCondition}"/></td>
                 <td><c:out value="${car.price}"/></td>
+                <td><a href="Rent">Rent</a></td>
             </tr>
         </c:forEach>
         </tbody>

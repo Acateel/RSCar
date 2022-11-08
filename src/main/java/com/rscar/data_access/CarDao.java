@@ -18,6 +18,9 @@ public class CarDao extends BaseDao<Car>{
     private static final String SQL_SELECT_CAR_FOR_BYING =
                     "select car.* from car left join regcar on regcar.CarId=car.id left join sales on sales.CarId=car.id where regcar.id is null  and sales.id is null";
 
+    private static final String SQL_SELECT_ALL_FOR_RENT_FREE =
+            "select car.Id, car.Name, car.Make, car.Type, car.GraduationYear, car.VinCode, car.TechnicalCondition, regcar.RentalPrice from car right join regcar on regcar.CarId = car.Id left join rental on rental.RegCarId = regcar.Id where ReturnDate < now() or ReturnDate is null;";
+
     public CarDao(BasicConnectionPool connectionPool) {
         super(connectionPool);
     }
@@ -50,7 +53,7 @@ public class CarDao extends BaseDao<Car>{
         try {
             connection = connectionPool.getConnection();
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_CAR_FOR_BYING);
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_FOR_RENT_FREE);
             while (resultSet.next()) {
                 cars.add(parseResultSet(resultSet));
             }
