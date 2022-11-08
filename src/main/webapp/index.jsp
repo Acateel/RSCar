@@ -1,14 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>RSCar</title>
+    <jsp:include page="WEB-INF/bootstrapHead.html"/>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
-<a href="Cars">Show Car</a>
+<jsp:include page="WEB-INF/Navbar.jsp"/>
 </body>
 </html>
